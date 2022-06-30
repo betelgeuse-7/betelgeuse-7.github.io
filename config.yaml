@@ -1,0 +1,43 @@
+baseURL: /
+languageCode: en-us
+theme: photophobia
+title: "[BLOG] betelgeuse-7 | Abidin Durdu"
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: about
+      name: About
+      url: /about
+      weight: 2
+
+params:
+  abbrDateFmt: "Jan 2"
+  author: "Abidin Durdu"
+  dateFmt: "2006-01-02"
+  social:
+    - name: GitHub
+      url: https://github.com/betelgeuse-7
+    - name: Twitter
+      url: https://twitter.com/@abidindrd_
+    - name: LinkedIn
+      url: https://linkedin.com/in/abidin-durdu-464b90241/
+  subtitle: ">>> My writings"
+  favicon: favicon.ico
+
+markup:
+  highlight:
+    noClasses: true
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: false
+    style: fruity
+    tabWidth: 4

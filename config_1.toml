@@ -1,0 +1,56 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Abidin Durdu"
+theme = "smigle"
+
+[params]
+  favicon = "favicon.ico"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "[BLOG] betelgeuse-7"
+    subtitle = "My writings"
+    owner = "Abidin Durdu"
+    keywords = "software development, go, golang, blog, backend"
+    menuMore = "show more"
+    readMore = "read more"
+    readOtherPosts = "read other posts"
+    newerPosts = "newer posts"
+    olderPosts = "older posts"
+    missingContentMessage = "page not found :["
+    missingBackButtonLabel = "back to home page"
+    favicon = "favicon.ico"
+
+    [languages.en.params.logo]
+      logoText = "betelgeuse-7"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts"
+
+[markup]
+  [markup.highlight]
+    noClasses = true
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    style = 'api'
+    tabWidth = 4
+
+[author]
+  name = "Abidin Durdu"
+  homepage = "/"
