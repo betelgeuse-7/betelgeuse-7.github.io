@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 date: 2022-06-27T17:15:54+03:00
-draft: true
+draft: false
 ---
 
 I am a software developer living in Turkey. I enjoy programming. I started programming in September 2020, when I was bored in quarantine. I build open-source projects on ***[Github](https://github.com/betelgeuse-7/)***. I also use ***[Twitter](https://twitter.com/@abidindrd_/)***. I do have a ***[LinkedIn](https://linkedin.com/https://www.linkedin.com/in/abidin-durdu-464b90241/)*** profile.
