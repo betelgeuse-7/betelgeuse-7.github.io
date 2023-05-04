@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>A New Programming Language</title>
+<meta name="description" content="A new programming language">
+            <meta name="keywords" content="programming, compilers, programming languages">
+            
+<!-- Title font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<!-- Paragraph font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+
+<!-- Code font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+            
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+            <style>
+            
+::selection {
+  background-color: #fcbe95;
+  color: black;
+}
+
+html {
+    border-left: 5px solid #bc6ded;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fbfcf2;
+}
+
+.codehilite {
+    font-family: 'Source Code Pro', monospace;
+    padding: 0.5rem;
+    border-top: 0.12rem solid #bc6ded;
+    border-bottom: 0.12rem solid #bc6ded;
+    margin: 0.4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    background-color: #fffaed;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h1::after {
+    content: " ✧";
+    color: #bc6ded;
+}
+
+a {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+a:hover {
+    font-size: 1.11rem;
+    color: #fa8d34;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+  content: "::> ";
+  color: #6200a8;
+  font-weight: bold;
+  display: inline-block;
+  width: 2em;
+  margin-left: -1em;
+  margin-right: 0.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+            pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #f8f8f8; }
+.codehilite .c { color: #3D7B7B; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #FF0000 } /* Error */
+.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666666 } /* Operator */
+.codehilite .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #9C6500 } /* Comment.Preproc */
+.codehilite .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #E40000 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #008400 } /* Generic.Inserted */
+.codehilite .go { color: #717171 } /* Generic.Output */
+.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #0044DD } /* Generic.Traceback */
+.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #B00040 } /* Keyword.Type */
+.codehilite .m { color: #666666 } /* Literal.Number */
+.codehilite .s { color: #BA2121 } /* Literal.String */
+.codehilite .na { color: #687822 } /* Name.Attribute */
+.codehilite .nb { color: #008000 } /* Name.Builtin */
+.codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #880000 } /* Name.Constant */
+.codehilite .nd { color: #AA22FF } /* Name.Decorator */
+.codehilite .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.codehilite .nf { color: #0000FF } /* Name.Function */
+.codehilite .nl { color: #767600 } /* Name.Label */
+.codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #19177C } /* Name.Variable */
+.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+.codehilite .mf { color: #666666 } /* Literal.Number.Float */
+.codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+.codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+.codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.codehilite .sx { color: #008000 } /* Literal.String.Other */
+.codehilite .sr { color: #A45A77 } /* Literal.String.Regex */
+.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+.codehilite .vc { color: #19177C } /* Name.Variable.Class */
+.codehilite .vg { color: #19177C } /* Name.Variable.Global */
+.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+.codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+            </style>    
+        </head>
+            <body class="container">
+                <h1>A New Programming Language</h1>
+
+<p>I have plans to design and implement a programming language this year. </p>
+
+<h3>Why ?</h3>
+
+<p>If I were to list all the things people say that irritate me the most, this would certainly be in that list:</p>
+
+<p><strong><em>There is already X. Why are you reinventing the wheel?</em></strong></p>
+
+<p>I have so much respect for people who value reinventing things. I have that respect not for people who are reinventing things just for the sole purpose of feeling <em>different</em> than other people (high ego). I have that respect for people who are reinventing things in the hopes that he will gain a deeper understanding of the various choices one would have and trade-offs one would face in the design and implementation of <em>the thing</em>.</p>
+
+<p>I believe you figured out the motivation behind my attempt of utter stupidness behind this undertaking of a mission so unnecessary and so hard. (I have to say I love exaggerating, and dramatizing things. That's my taste in sarcasm.)</p>
+
+<h3>How ?</h3>
+
+<p>By building a compiler... </p>
+
+<p>I built a compiler (or a transpiler, should I say?) that takes Quoi source code, and outputs Go source code. Quoi is a toy language. Go is <strong>not</strong> a toy language.</p>
+
+<p>So, I can say I have some experience in building compilers though <code>qc</code> (Quoi compiler) didn't have a lot of complex parts. I didn't implement optimization passes. I didn't implement register allocation (because I wasn't targeting a machine language like x86 or ARM). Quoi doesn't have modules, so I didn't implement anything like modules or packages.</p>
+
+<p>But this time I will probably be dealing with these. At first, I want the compiler to be able to produce x86-64 code that runs on 64-bit Linux machines.</p>
+
+<h3>Possible features of the language</h3>
+
+<p>Although I can't say I know a lot of things about programming language design and PL Theory, I can list a few things I would want my language to have (Of course I will learn more about these things before starting to design the language).</p>
+
+<ul>
+<li><p>Static typing<br />
+I can't imagine favoring dynamic typing over this one.</p></li>
+<li><p>Type inference<br />
+Not a full type inference (is it called that?) found in languages like F#, OCaml or Haskell. Rather, a basic inference (You will have to specify the types of function parameters, for example).</p></li>
+<li><p>Automatic memory management<br />
+I have to admit I picked this one to have an opportunity to implement a garbage collector. So, we can say this language will not be best suited to high-performance systems because of performance penalties brought about by GC pauses.</p></li>
+<li><p>Composite types<br />
+Structs, arrays, lists (dynamic arrays), records (or maps, or records, or dictionaries, or associative arrays, or ...), tuples</p></li>
+<li><p>First-class functions<br />
+Functions as values. Function signatures.</p></li>
+<li><p>A module system<br />
+Based on file names.</p></li>
+<li><p>A standard library<br />
+Containing modules for networking, json, and file I/O.</p></li>
+<li><p>Variadic arguments<br />
+The ability to pass an arbitrary number of arguments of same type to a function.</p></li>
+<li><p>Some mechanism to "extend" a struct<br />
+We can call that composition (rather than inheritance).</p></li>
+<li><p>Access modifiers<br />
+Variables, and fields of a struct are private by default. Programmer can set them public in which case they can be referenced in other modules.</p></li>
+<li><p>Generics<br />
+If not too hard to implement.</p></li>
+</ul>
+
+<p>There may be some I forgot to mention. I will be posting about this language anyways. </p>
+
+<h3>Possible syntax</h3>
+
+<p>Not C-like, but not alien-like either...</p>
+
+<p>It will be different than most languages. I have some candidates. The most probable to win looks like a combination of Typescript, Rust, Jai, Odin, Go, Coq, and OCaml (That's a lot of languages).</p>
+
+<h3>Possible primitive types</h3>
+
+<p>This is not very exciting. Boring stuff...</p>
+
+<p><code>Int32, Int, Uint32, Uint, String, Bool, Float32, Float, Byte</code></p>
+
+<p>For strings, I am not sure how I will handle Unicode.</p>
+
+<p><code>Byte</code> is an 8-bit unsigned integer for representing ASCII characters.</p>
+
+<p>There are pointers, but no pointer arithmetic.</p>
+
+<hr />
+
+<p>There are other aspects to the language. I will post more here.</p>
+
+<hr />
+
+<h2>I am feeling sleepy. Good night.</h2>
+
+            </body>
+        </html>
+        
