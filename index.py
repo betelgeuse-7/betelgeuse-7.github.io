@@ -27,7 +27,7 @@ def make_post_list():
     html = ""
     for p in posts:
         human_date = datetime.datetime.strptime(p["date"], '%d-%m-%Y').strftime('%B %d, %Y')
-        html += f'<a class="post" target="_blank" href={p["url"]+"/"}>{p["title"]}</a><p class="date">{human_date}</p>'
+        html += f'<a class="post" href={p["url"]+"/"}>{p["title"]}</a><p class="date">{human_date}</p>'
 
     return (html, "No posts" if len(posts) == 0 else "Come in")
 

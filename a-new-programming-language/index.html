@@ -29,17 +29,18 @@
             <style>
             
 ::selection {
-  background-color: #fcbe95;
+  background-color: #6c8f5b;
   color: black;
 }
 
 html {
-    border-left: 5px solid #bc6ded;
+    border-left: 2.3em solid #6c8f5b;
+    border-right: 0.5em solid #a5d190;
 }
 
 body {
     font-family: 'Merriweather', serif;
-    background-color: #fbfcf2;
+    background-color: #faf9b9;
 }
 
 .codehilite {
@@ -53,8 +54,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    background-color: #fffaed;
     margin-bottom: 1rem;
+}
+
+h2, h3, h4, h5, h6 {
+    background-color: #c4e8b3;
 }
 
 h1 {
@@ -62,8 +66,8 @@ h1 {
 }
 
 h1::after {
-    content: " ✧";
-    color: #bc6ded;
+    content: " ✦";
+    color: #6c8f5b;
 }
 
 a {
@@ -80,19 +84,33 @@ ul {
     list-style: none;
 }
 
-ul li::before {
-  content: "::> ";
-  color: #6200a8;
+li::before {    
+  content: "⬊ ";
+  color: #359e02;
   font-weight: bold;
-  display: inline-block;
-  width: 2em;
-  margin-left: -1em;
-  margin-right: 0.5rem;
+  margin-left: -2em;
 }
 
 li {
     margin-bottom: 0.5rem;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5d190;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #568241;
+}
+
 
             pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -181,33 +199,32 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <p><strong><em>There is already X. Why are you reinventing the wheel?</em></strong></p>
 
-<p>I have so much respect for people who value reinventing things. I have that respect not for people who are reinventing things just for the sole purpose of feeling <em>different</em> than other people (high ego). I have that respect for people who are reinventing things in the hopes that he will gain a deeper understanding of the various choices one would have and trade-offs one would face in the design and implementation of <em>the thing</em>.</p>
+<p>I have so much respect for people who value reinventing things. I have that respect not for people who are reinventing things just for the sole purpose of feeling different than other people. I have that respect for people who are reinventing things in the hopes that he will gain a deeper understanding of the various choices one would have and trade-offs one would face in the design and implementation of the thing.</p>
 
-<p>I believe you figured out the motivation behind my attempt of utter stupidness behind this undertaking of a mission so unnecessary and so hard. (I have to say I love exaggerating, and dramatizing things. That's my taste in sarcasm.)</p>
+<p>I believe you figured out the motivation behind my attempt of utter stupidness behind this undertaking of a mission so unnecessary and so hard. (I sometimes exaggerate things.)</p>
 
 <h3>How ?</h3>
 
 <p>By building a compiler... </p>
 
-<p>I built a compiler (or a transpiler, should I say?) that takes Quoi source code, and outputs Go source code. Quoi is a toy language. Go is <strong>not</strong> a toy language.</p>
+<p>I built a compiler (or a transpiler, should I say?) that takes Quoi source code, and outputs Go source code. Quoi is a toy language. Go is not a toy language.</p>
 
-<p>So, I can say I have some experience in building compilers though <code>qc</code> (Quoi compiler) didn't have a lot of complex parts. I didn't implement optimization passes. I didn't implement register allocation (because I wasn't targeting a machine language like x86 or ARM). Quoi doesn't have modules, so I didn't implement anything like modules or packages.</p>
+<p>So, I can say I have some experience in building compilers though <code>qc</code> (Quoi compiler) didn't have a lot of complex parts. I didn't implement optimization passes. I didn't implement register allocation. Quoi doesn't have modules, so I didn't implement anything like modules or packages.</p>
 
 <p>But this time I will probably be dealing with these. At first, I want the compiler to be able to produce x86-64 code that runs on 64-bit Linux machines.</p>
 
 <h3>Possible features of the language</h3>
 
-<p>Although I can't say I know a lot of things about programming language design and PL Theory, I can list a few things I would want my language to have (Of course I will learn more about these things before starting to design the language).</p>
+<p>Although I can't say I know a lot of things about programming language design and PL Theory, I can list a few things I would want my language to have.</p>
 
 <ul>
-<li><p>Static typing<br />
-I can't imagine favoring dynamic typing over this one.</p></li>
+<li><p>Static typing</p></li>
 <li><p>Type inference<br />
-Not a full type inference (is it called that?) found in languages like F#, OCaml or Haskell. Rather, a basic inference (You will have to specify the types of function parameters, for example).</p></li>
+Not a full type inference found in languages like F#, OCaml or Haskell. Rather, a basic inference (You will have to specify the types of function parameters, for example).</p></li>
 <li><p>Automatic memory management<br />
 I have to admit I picked this one to have an opportunity to implement a garbage collector. So, we can say this language will not be best suited to high-performance systems because of performance penalties brought about by GC pauses.</p></li>
 <li><p>Composite types<br />
-Structs, arrays, lists (dynamic arrays), records (or maps, or records, or dictionaries, or associative arrays, or ...), tuples</p></li>
+Structs, arrays, lists (dynamic arrays), records (or maps, records, dictionaries, associative arrays), tuples</p></li>
 <li><p>First-class functions<br />
 Functions as values. Function signatures.</p></li>
 <li><p>A module system<br />
@@ -216,7 +233,7 @@ Based on file names.</p></li>
 Containing modules for networking, json, and file I/O.</p></li>
 <li><p>Variadic arguments<br />
 The ability to pass an arbitrary number of arguments of same type to a function.</p></li>
-<li><p>Some mechanism to "extend" a struct<br />
+<li><p>Some mechanism to extend a struct<br />
 We can call that composition (rather than inheritance).</p></li>
 <li><p>Access modifiers<br />
 Variables, and fields of a struct are private by default. Programmer can set them public in which case they can be referenced in other modules.</p></li>

@@ -21,17 +21,18 @@ bootstrap="""
 
 css="""
 ::selection {
-  background-color: #fcbe95;
+  background-color: #6c8f5b;
   color: black;
 }
 
 html {
-    border-left: 5px solid #bc6ded;
+    border-left: 2.3em solid #6c8f5b;
+    border-right: 0.5em solid #a5d190;
 }
 
 body {
     font-family: 'Merriweather', serif;
-    background-color: #fbfcf2;
+    background-color: #faf9b9;
 }
 
 .codehilite {
@@ -45,8 +46,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    background-color: #fffaed;
     margin-bottom: 1rem;
+}
+
+h2, h3, h4, h5, h6 {
+    background-color: #c4e8b3;
 }
 
 h1 {
@@ -54,8 +58,8 @@ h1 {
 }
 
 h1::after {
-    content: " ✧";
-    color: #bc6ded;
+    content: " ✦";
+    color: #6c8f5b;
 }
 
 a {
@@ -72,19 +76,33 @@ ul {
     list-style: none;
 }
 
-ul li::before {
-  content: "::> ";
-  color: #6200a8;
+li::before {    
+  content: "⬊ ";
+  color: #359e02;
   font-weight: bold;
-  display: inline-block;
-  width: 2em;
-  margin-left: -1em;
-  margin-right: 0.5rem;
+  margin-left: -2em;
 }
 
 li {
     margin-bottom: 0.5rem;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5d190;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #568241;
+}
+
 """
 
 index_css = """
@@ -116,4 +134,21 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
     color: black;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5d190;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #568241;
+}
+
 """

@@ -14,35 +14,34 @@ If I were to list all the things people say that irritate me the most, this woul
 
 ***There is already X. Why are you reinventing the wheel?***
 
-I have so much respect for people who value reinventing things. I have that respect not for people who are reinventing things just for the sole purpose of feeling *different* than other people (high ego). I have that respect for people who are reinventing things in the hopes that he will gain a deeper understanding of the various choices one would have and trade-offs one would face in the design and implementation of *the thing*.
+I have so much respect for people who value reinventing things. I have that respect not for people who are reinventing things just for the sole purpose of feeling different than other people. I have that respect for people who are reinventing things in the hopes that he will gain a deeper understanding of the various choices one would have and trade-offs one would face in the design and implementation of the thing.
 
-I believe you figured out the motivation behind my attempt of utter stupidness behind this undertaking of a mission so unnecessary and so hard. (I have to say I love exaggerating, and dramatizing things. That's my taste in sarcasm.)
+I believe you figured out the motivation behind my attempt of utter stupidness behind this undertaking of a mission so unnecessary and so hard. (I sometimes exaggerate things.)
 
 ### How ?
 
 By building a compiler... 
 
-I built a compiler (or a transpiler, should I say?) that takes Quoi source code, and outputs Go source code. Quoi is a toy language. Go is **not** a toy language.
+I built a compiler (or a transpiler, should I say?) that takes Quoi source code, and outputs Go source code. Quoi is a toy language. Go is not a toy language.
 
-So, I can say I have some experience in building compilers though `qc` (Quoi compiler) didn't have a lot of complex parts. I didn't implement optimization passes. I didn't implement register allocation (because I wasn't targeting a machine language like x86 or ARM). Quoi doesn't have modules, so I didn't implement anything like modules or packages.
+So, I can say I have some experience in building compilers though `qc` (Quoi compiler) didn't have a lot of complex parts. I didn't implement optimization passes. I didn't implement register allocation. Quoi doesn't have modules, so I didn't implement anything like modules or packages.
 
 But this time I will probably be dealing with these. At first, I want the compiler to be able to produce x86-64 code that runs on 64-bit Linux machines.
 
 ### Possible features of the language
 
-Although I can't say I know a lot of things about programming language design and PL Theory, I can list a few things I would want my language to have (Of course I will learn more about these things before starting to design the language).
+Although I can't say I know a lot of things about programming language design and PL Theory, I can list a few things I would want my language to have.
 
 - Static typing
-    I can't imagine favoring dynamic typing over this one.
 
 - Type inference
-    Not a full type inference (is it called that?) found in languages like F#, OCaml or Haskell. Rather, a basic inference (You will have to specify the types of function parameters, for example).
+    Not a full type inference found in languages like F#, OCaml or Haskell. Rather, a basic inference (You will have to specify the types of function parameters, for example).
 
 - Automatic memory management
     I have to admit I picked this one to have an opportunity to implement a garbage collector. So, we can say this language will not be best suited to high-performance systems because of performance penalties brought about by GC pauses.
 
 - Composite types
-    Structs, arrays, lists (dynamic arrays), records (or maps, or records, or dictionaries, or associative arrays, or ...), tuples
+    Structs, arrays, lists (dynamic arrays), records (or maps, records, dictionaries, associative arrays), tuples
 
 - First-class functions
     Functions as values. Function signatures.
@@ -56,7 +55,7 @@ Although I can't say I know a lot of things about programming language design an
 - Variadic arguments
     The ability to pass an arbitrary number of arguments of same type to a function.
 
-- Some mechanism to "extend" a struct
+- Some mechanism to extend a struct
     We can call that composition (rather than inheritance).
 
 - Access modifiers
