@@ -1,4 +1,4 @@
-import styles, os, sys, datetime, string
+import styles, os, datetime, string
 
 TITLE = "[BLOG] betelgeuse-7"
 
