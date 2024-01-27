@@ -1,4 +1,7 @@
-import styles, os, datetime, string
+import styles
+import os
+import datetime
+import string
 
 TITLE = "[BLOG] betelgeuse-7"
 
@@ -24,12 +27,14 @@ def make_post_list():
             dictionary["url"] = d
             posts.append(dictionary)
         
+    posts.sort(key=lambda x: datetime.datetime.strptime(x["date"], '%d-%m-%Y'), reverse=True)
+
     html = ""
     for p in posts:
         human_date = datetime.datetime.strptime(p["date"], '%d-%m-%Y').strftime('%B %d, %Y')
         html += f'<a class="post" href={p["url"]+"/"}>{p["title"]}</a><p class="date">{human_date}</p>'
 
-    return (html, "No posts" if len(posts) == 0 else "Come in")
+    return (html, "No posts" if len(posts) == 0 else "All posts")
 
 (posts_html, posts_title) = make_post_list()
 
@@ -45,6 +50,20 @@ index = f"""<!DOCTYPE html>
     {styles.index_css}
 
     </style>
+
+    <!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21L9B7E4DJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      const gtag = () => dataLayer.push(arguments)
+      gtag("js", new Date());
+    
+      gtag("config", "G-21L9B7E4DJ");
+    </script>
+    
+    <!-- END Google Analytics   -->
+
     <title>{TITLE}</title>
 </head>
 <body class="container">

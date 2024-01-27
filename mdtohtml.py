@@ -26,7 +26,7 @@ def mdtohtml(md_path):
         keywords = metadata_match.group(3)
         date = metadata_match.group(4)
     else:
-        print("metadata section not found at the top of the file")
+        print(f"metadata section not found at the top of the file: {md_path}")
         sys.exit(1)
     md_text = re.sub(r'^title=".+"\ndescription=".+"\nkeywords=".+"\n---\n', '', md_text, count=1, flags=re.DOTALL | re.MULTILINE)
     pygments_formatter = HtmlFormatter(style='default')
@@ -48,6 +48,20 @@ def mdtohtml(md_path):
             {styles.css}
             {pygments_css}
             </style>    
+
+        <!-- Google Analytics -->
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-21L9B7E4DJ"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          const gtag = () => dataLayer.push(arguments)
+          gtag("js", new Date());
+        
+          gtag("config", "G-21L9B7E4DJ");
+        </script>
+    
+        <!-- END Google Analytics   -->
+
         </head>
             <body class="container">
                 {html_text}

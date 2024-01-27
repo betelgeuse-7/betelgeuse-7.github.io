@@ -28,6 +28,11 @@
 
             <style>
             
+.gist-meta a {
+    font-size: 0.8rem;
+}
+
+
 ::selection {
   background-color: #6c8f5b;
   color: black;
@@ -46,8 +51,8 @@ body {
 .codehilite {
     font-family: 'Source Code Pro', monospace;
     padding: 0.5rem;
-    border-top: 0.12rem solid #bc6ded;
-    border-bottom: 0.12rem solid #bc6ded;
+    border-top: 0.12rem solid #0e0d0f;
+    border-bottom: 0.12rem solid #0e0d0f;
     margin: 0.4rem;
 }
 
@@ -66,8 +71,12 @@ h1 {
 }
 
 h1::after {
-    content: " ✦";
+    /*content: " ✦";*/
     color: #6c8f5b;
+}
+
+p {
+    line-height: 158%;
 }
 
 a {
@@ -81,18 +90,20 @@ a:hover {
 }
 
 ul {
-    list-style: none;
+    /*list-style: none;*/
 }
-
+/*
 li::before {    
-  content: "⬊ ";
+  /*content: "⬊ ";*/
+  content: "% ";
   color: #359e02;
   font-weight: bold;
   margin-left: -2em;
 }
-
+*/
 li {
     margin-bottom: 0.5rem;
+    font-size: 85%;
 }
 
 ::-webkit-scrollbar {
@@ -187,6 +198,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
 .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
             </style>    
+
+        <!-- Google Analytics -->
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-21L9B7E4DJ"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          const gtag = () => dataLayer.push(arguments)
+          gtag("js", new Date());
+        
+          gtag("config", "G-21L9B7E4DJ");
+        </script>
+    
+        <!-- END Google Analytics   -->
+
         </head>
             <body class="container">
                 <h1>Creating hard links in Go (implementing a tiny subset of <code>ln</code>)</h1>

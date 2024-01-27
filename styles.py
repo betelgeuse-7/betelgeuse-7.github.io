@@ -20,6 +20,11 @@ bootstrap="""
 """
 
 css="""
+.gist-meta a {
+    font-size: 0.8rem;
+}
+
+
 ::selection {
   background-color: #6c8f5b;
   color: black;
@@ -38,8 +43,8 @@ body {
 .codehilite {
     font-family: 'Source Code Pro', monospace;
     padding: 0.5rem;
-    border-top: 0.12rem solid #bc6ded;
-    border-bottom: 0.12rem solid #bc6ded;
+    border-top: 0.12rem solid #0e0d0f;
+    border-bottom: 0.12rem solid #0e0d0f;
     margin: 0.4rem;
 }
 
@@ -58,8 +63,12 @@ h1 {
 }
 
 h1::after {
-    content: " ✦";
+    /*content: " ✦";*/
     color: #6c8f5b;
+}
+
+p {
+    line-height: 158%;
 }
 
 a {
@@ -73,18 +82,20 @@ a:hover {
 }
 
 ul {
-    list-style: none;
+    /*list-style: none;*/
 }
-
+/*
 li::before {    
-  content: "⬊ ";
+  /*content: "⬊ ";*/
+  content: "% ";
   color: #359e02;
   font-weight: bold;
   margin-left: -2em;
 }
-
+*/
 li {
     margin-bottom: 0.5rem;
+    font-size: 85%;
 }
 
 ::-webkit-scrollbar {
