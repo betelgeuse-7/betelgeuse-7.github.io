@@ -239,7 +239,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <p>This is the identity function. It returns a copy of the value given to it, so the type of the returned value and the given value are the same. The type parameter here is called <code>T</code>, and it is put inside pipes (<code>|</code>) after the function name. The type parameter can be referenced in the function definition just like any other type. </p>
 
-<p>This function is like a template. The type parameter is eventually going to be instantiated to a concrete type. For example, if we called this function with a value of type <code>Int</code>:</p>
+<p>This function is like a template. The type parameter will eventually be instantiated to a concrete type. For example, if we called this function with a value of type <code>Int</code>:</p>
 
 <pre><code>id(4);
 </code></pre>
@@ -253,7 +253,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <h4>We need to set a limit</h4>
 
-<p>What if we want to declare a parametrically-polymorphic function, but we want it to accept only a set of allowed types arguments? This is where we need type parameter <em>constraints</em>.</p>
+<p>What if we want to declare a parametrically-polymorphic function, but we want it to accept only a set of allowed type arguments? This is where we need type parameter <em>constraints</em>.</p>
 
 <p>The syntax is as follows:</p>
 
