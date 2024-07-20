@@ -30,7 +30,7 @@ func id|T|(x: T): T {
 
 This is the identity function. It returns a copy of the value given to it, so the type of the returned value and the given value are the same. The type parameter here is called `T`, and it is put inside pipes (`|`) after the function name. The type parameter can be referenced in the function definition just like any other type. 
 
-This function is like a template. The type parameter is eventually going to be instantiated to a concrete type. For example, if we called this function with a value of type `Int`:
+This function is like a template. The type parameter will eventually be instantiated to a concrete type. For example, if we called this function with a value of type `Int`:
 
 ```
 id(4);
@@ -44,7 +44,7 @@ The compiler would need to create a *specialized* version of the `id` function t
 
 #### We need to set a limit
 
-What if we want to declare a parametrically-polymorphic function, but we want it to accept only a set of allowed types arguments? This is where we need type parameter *constraints*.
+What if we want to declare a parametrically-polymorphic function, but we want it to accept only a set of allowed type arguments? This is where we need type parameter *constraints*.
 
 The syntax is as follows:
 
