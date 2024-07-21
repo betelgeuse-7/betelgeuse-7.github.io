@@ -174,7 +174,7 @@ func describeFruit(f: Fruit) {
 }
 ```
 
-The function `describeFruit` would typecheck if were to pass it an instance of `Lemon` or `Banana`, but how does the compiler know which method to call? Generally, it can't know it at compile-time, and it needs to figure it out at run-time. This is called *late binding*, and it is achieved through the well-known mechanism of *dynamic dispatch*.
+The function `describeFruit` would typecheck if we were to pass it an instance of `Lemon` or `Banana`, but how does the compiler know which method to call? Generally, it can't know it at compile-time, and it needs to figure it out at run-time. This is called *late binding*, and it is achieved through the well-known mechanism of *dynamic dispatch*.
 
 `Lemon` and `Banana` are subtypes of `Fruit`, because `Fruit` is the generalized type.
 

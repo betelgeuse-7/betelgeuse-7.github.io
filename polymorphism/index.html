@@ -380,7 +380,7 @@ func describeFruit(f: Fruit) {
 }
 </code></pre>
 
-<p>The function <code>describeFruit</code> would typecheck if were to pass it an instance of <code>Lemon</code> or <code>Banana</code>, but how does the compiler know which method to call? Generally, it can't know it at compile-time, and it needs to figure it out at run-time. This is called <em>late binding</em>, and it is achieved through the well-known mechanism of <em>dynamic dispatch</em>.</p>
+<p>The function <code>describeFruit</code> would typecheck if we were to pass it an instance of <code>Lemon</code> or <code>Banana</code>, but how does the compiler know which method to call? Generally, it can't know it at compile-time, and it needs to figure it out at run-time. This is called <em>late binding</em>, and it is achieved through the well-known mechanism of <em>dynamic dispatch</em>.</p>
 
 <p><code>Lemon</code> and <code>Banana</code> are subtypes of <code>Fruit</code>, because <code>Fruit</code> is the generalized type.</p>
 
